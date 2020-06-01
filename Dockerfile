@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	libssl-dev \
 	libdatetime-perl \
 	libncurses-dev \
+	screen \
 	libwww-perl \
 	pkg-config \
 	automake \
@@ -21,7 +22,7 @@ RUN useradd --create-home --home-dir $HOME user \
 	&& chown -R user:user $HOME
 
 ENV LANG C.UTF-8
-ENV IRSSI_VERSION 1.2.2
+ENV IRSSI_VERSION 1.2.0
 ENV FISH_VERSION 1.6
 
 RUN git clone https://github.com/irssi/irssi \
@@ -38,9 +39,9 @@ RUN git clone https://github.com/falsovsky/FiSH-irssi.git \
 	&& make \
 	&& make install
 	
-RUN git clone https://github.com/foretix/irssi-blowfish-docker.git \
+RUN git clone https://github.com/juliandegroot/irssi-blowfish-docker.git \
 	&& chmod +x /irssi-blowfish-docker/irssi_startup.sh
 
 WORKDIR /irssi-blowfish-docker
 
-ENTRYPOINT [ "bash", "irssi_startup.sh" ]
+#After logging in to console execute after chmod+x these files: ./screencmd1.sh && ./screencmd2.sh

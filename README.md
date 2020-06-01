@@ -10,7 +10,7 @@ Blowfish support is integrated using the work of https://github.com/falsovsky/Fi
 
 # Run
 
-`docker run -v /yourfolder:/home/user/.irssi irssi-blowfish-docker`
+Is ran via Unraid, rightclick via webui to get into console and execute bash cmd as seen in dockerfile at the end.
 
 Note: `/load fish` command is executed immediately on start, so there is no need to load fish extension manually.
 
